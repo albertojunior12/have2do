@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Contatos de {{ name }}</h1>
+
+    <ol>
+        {% for contact in contacts %}
+            <li>{{ contact }}</li>
+        {% empty %}
+            <span>Você ainda não possue nenhum contato</span>
+        {% endfor %}
+    </ol>
+
+    <a href="/add/contacts/">Novo contato</a>
+
+</body>
+</html>
