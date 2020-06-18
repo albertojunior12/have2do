@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+
+        <div>
+            <label for="id_title">Título</label>
+            <input type="text" name="title" id="id_title" value="{{task.title}}">
+        </div>
+
+        <div>
+            <label for="id_description">Descrição</label>
+            <textarea name="description" id="id_description">{{task.description}}</textarea>
+        </div>
+
+        <div>
+            <button type="submit">Salvar</button>
+        </div>
+    </form>
+</body>
+</html>
