@@ -9,7 +9,7 @@
 
     <br>
 
-    <a href="/tasks/create/">Nova Tarefa</a>
+    <a href="{% url 'task_create' %}">Nova Tarefa</a>
     <br>
 
     <table border="1">
@@ -17,6 +17,7 @@
             <tr>
                 <td>Id</td>
                 <td>Título</td>
+                <td>Projeto</td>
                 <td>Descrição</td>
                 <td>Ações</td>
             </tr>
@@ -26,11 +27,12 @@
                 <tr>
                     <td>{{ task.id }}</td>
                     <td>{{ task.title }}</td>
+                    <td>{{ task.project.name }}</td>
                     <td>{{ task.abstract }}</td>
                     <td>
-                        <a href="/tasks/detail/{{task.id}}/">Ver mais</a> |
-                        <a href="/tasks/update/{{task.id}}/">Atualizar</a> |
-                        <a href="/tasks/delete/{{task.id}}/">Excluir</a> |
+                        <a href="{% url 'task_detail' task.id %}">Ver mais</a> |
+                        <a href="{% url 'task_update' task.id %}">Atualizar</a> |
+                        <a href="{% url 'task_delete' task.id %}">Excluir</a> |
                     </td>
                 </tr>
             {% endfor %}

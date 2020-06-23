@@ -6,8 +6,8 @@
 </head>
 <body>
     <h1>{{ task.title }}</h1>
-    <a href="/tasks/update/{{task.id}}/">Atualizar</a> |
-    <a href="/tasks/delete/{{task.id}}/">Excluir</a>
+    <a href="{% url 'task_update' task.id %}">Atualizar</a> |
+    <a href="{% url 'task_delete' task.id %}">Excluir</a>
     <p>
         {{ task.description }}
     </p>
