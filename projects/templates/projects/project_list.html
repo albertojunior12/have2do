@@ -1,16 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>Lista de projetos</h1>
+{% extends 'bases/base.html' %}
 
-    <ul>
-        {% for project in projects %}
-            <li>{{ project.name }}</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% block content %}
+
+<section class="h2d-section">
+    {% for project in projects %}
+    <div class="h2d-card" style="background: {{project.color}};">
+        <h4 class="h2d-card--title">{{ project.name }}</h4>
+        <p class="h2d-card--content">
+            {{ project.abstract }}
+        </p>
+        <div class="h2d-card--actions">
+            <a href="#">Editar</a>
+            <a href="{% url 'project_detail' project.id %}">Ver Projeto</a>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+{% endblock %}

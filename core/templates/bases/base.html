@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Have2do | Gestão de tarefas</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+    <nav class="h2d-nav">
+        <div>
+            <h2>Have2do</h2>
+        </div>
+
+        <div class="h2d-nav--menu">
+            <a href="{% url 'project_list' %}">Meus Projetos</a>
+            <a href="#">Task Board</a>
+        </div>
+    </nav>
+
+    {% block content %}
+
+    {% endblock %}
+    
+
+</body>
+
+</html>

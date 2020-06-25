@@ -1,0 +1,88 @@
+/* 
+    #264653 (primary)
+    #2A9D8F (success)
+    #E9C46A (secondary)
+    #F4A261 (warning)
+    #E76F51 (danger)
+    #F5F6FA (ligth)
+    #333333 (dark)
+*/
+* {    
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #264653;
+    color: #F5F6FA;
+    font-family: sans-serif;
+}
+/* begin navigations */
+.h2d-nav {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 28px 180px;
+}
+
+.h2d-nav .h2d-nav--menu {
+    display: flex;
+
+}
+.h2d-nav .h2d-nav--menu a {
+    text-decoration: none;
+    font-size: 16pt;
+    margin: 0 18px;
+    color: #F5F6FA;
+}
+.h2d-nav .h2d-nav--menu a:hover {
+    text-decoration: underline;
+}
+/* end navigations */
+
+/* begin contents */
+.h2d-section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    padding: 10px 180px;
+}
+
+.h2d-card {
+    margin: 18px 0;
+    display: flex;
+    flex-direction: column;
+
+    background-color: #273c75;
+    width: 20rem;
+    padding: 18px;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+    transition: box-shadow 0.4s;
+}
+.h2d-card:hover {
+    box-shadow: 4px 4px 14px rgba(0,0,0,0.2);
+} 
+
+.h2d-card--title {
+    font-size: 14pt;
+    margin-bottom: 7px;
+}
+.h2d-card--content {
+    font-size: 12pt;
+    margin-bottom: 7px;
+}
+.h2d-card--actions {
+    display: flex;
+    justify-content: flex-end;
+}
+.h2d-card--actions a {
+    margin: 0 7px;
+    text-decoration: none;
+    color: #F5F6FA;
+}
+.h2d-card--actions a:hover {
+    text-decoration: underline;
+}
+/* end contents */

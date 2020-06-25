@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 
 from .models import Task
-from projects.models import Project
 from .forms import TaskForm
 
 
