@@ -1,5 +1,41 @@
 {% extends 'bases/base.html' %}
 
 {% block content %}
-  <h1>{{ project.name }}</h1>
+<section class="h2d-section">
+  <div class="h2d-project--header">
+    <div class="h2d-project--title">
+      <div class="h2d-project--badge" style="background-color: {{project.color}};"></div>
+      <h1>{{ project.name }}</h1>
+    </div>
+    {% if project.category %}
+    <div class="h2d-category--name">
+      <span>{{ project.category.name }}</span>
+    </div>
+    {% endif %}
+    <div>
+      <small><strong>Criado em: </strong> {{ project.created_at|date:"d/m/Y - H:i" }}</small> |
+      <small><strong>Atualizado em: </strong> {{ project.updated_at|date:"d/m/Y - H:i" }}</small>
+    </div>
+  </div>
+
+  <div class="h2d-project--description">
+    <p>
+      {{ project.description }}
+    </p>
+  </div>
+
+  <div class="h2d-project--tasks">
+    {% for task in project.tasks.all %}
+    <div class="h2d-card--task">
+      <h4>{{ task.title }}</h4>
+      {{ task.description|linebreaks }}
+    </div>
+    {% empty %}
+    <p>
+      Nenhuma tarefa para esse projeto
+    </p>
+    {% endfor %}
+  </div>
+
+</section>
 {% endblock %}

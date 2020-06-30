@@ -1,21 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h2>Criar Projeto</h2>
+{% extends 'bases/base.html' %}
 
-    <form method="post">
-        {% csrf_token %}
-
-        {{ form.as_p }}
-
+{% block content %}
+<section class="h2d-section">
+    <div class="h2d-form--center">
         <div>
-            <button type="submit">Salvar</button>
-        </div>
-    </form>
+            <h2>Criar Projeto</h2>
 
-</body>
-</html>
+            <form method="post">
+                {% csrf_token %}
+
+                {{ form.as_p }}
+
+                <div>
+                    <button type="submit" class="bg-success">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

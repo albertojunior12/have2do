@@ -6,15 +6,20 @@
     {% for project in projects %}
     <div class="h2d-card" style="background: {{project.color}};">
         <h4 class="h2d-card--title">{{ project.name }}</h4>
+        <small>{{ project.created_at }}</small>
         <p class="h2d-card--content">
             {{ project.abstract }}
         </p>
         <div class="h2d-card--actions">
-            <a href="#">Editar</a>
+            <a href="{% url 'project_update' project.id %}">Editar</a>
             <a href="{% url 'project_detail' project.id %}">Ver Projeto</a>
         </div>
     </div>
     {% endfor %}
 </section>
+
+<a href="{% url 'project_create' %}" class="h2d-float--button">
+    Novo Projeto
+</a>
 
 {% endblock %}

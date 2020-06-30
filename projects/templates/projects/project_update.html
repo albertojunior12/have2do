@@ -1,0 +1,21 @@
+{% extends 'bases/base.html' %}
+
+{% block content %}
+<section class="h2d-section">
+  <div class="h2d-form--center">
+    <div>
+      <h2>Atualizar Projeto</h2>
+
+      <form method="post">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <div>
+          <button type="submit" class="bg-success">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

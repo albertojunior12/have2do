@@ -17,6 +17,17 @@ body {
     color: #F5F6FA;
     font-family: sans-serif;
 }
+
+/* begin backgrounds */
+.bg-primary {background: #264653; color: #F5F6FA;}
+.bg-success {background: #2A9D8F; color: #F5F6FA;}
+.bg-secondary {background: #E9C46A; color: #333333;}
+.bg-warning {background: #F4A261; color: #F5F6FA;}
+.bg-danger {background: #E76F51; color: #333333;}
+.bg-ligth {background: #F5F6FA; color: #333333;}
+.bg-dark {background: #333333; color: #F5F6FA;}
+/* end backgrounds */
+
 /* begin navigations */
 .h2d-nav {
     display: flex;
@@ -43,14 +54,80 @@ body {
 /* begin contents */
 .h2d-section {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
 
     padding: 10px 180px;
 }
 
-.h2d-card {
+.h2d-project--header {
+    display: flex;
+    flex-direction: column;
+}
+
+.h2d-project--title {
+    display: flex;
+    align-items: center;
+}
+
+.h2d-project--badge {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.h2d-category--name {
+    margin: 14px 0;
+}
+.h2d-category--name span {
+    background-color: #2A9D8F;
+    padding: 5px 10px;
+    border-radius: 1rem;
+}
+
+.h2d-project--description {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 14px;
+    margin-bottom: 14px;
+    border-radius: 0.6rem;
+}
+
+.h2d-project--tasks {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.h2d-card--task {
     margin: 18px 0;
+    display: flex;
+    flex-direction: column;
+
+    width: 16rem;
+    max-height: 240px;
+    min-height: 240px;
+    overflow: auto;
+
+    background-color: #ffda79;
+    padding: 18px;
+    border-radius: 0.2rem;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    transition: box-shadow 0.4s;
+
+    color: #333333;
+}
+.h2d-card--task:hover {
+    box-shadow: 4px 4px 14px rgba(0,0,0,0.2);
+}
+
+.h2d-card--task p {
+    margin: 10px 0;
+    font-weight: 300;
+}
+
+.h2d-card {
+    margin: 18px 10px;
     display: flex;
     flex-direction: column;
 
@@ -85,4 +162,70 @@ body {
 .h2d-card--actions a:hover {
     text-decoration: underline;
 }
+
+.h2d-float--button {
+    border-radius: 1rem;
+    background-color: #33d9b2;
+    padding: 20px;
+    box-shadow: 8px 8px 8px rgba(0,0,0,0.3);
+    text-decoration: none;
+    color: #333333;
+    font-weight: bold;
+
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+}
+.h2d-float--button:hover {
+    box-shadow: 4px 4px 3px rgba(0,0,0,0.5);
+}
 /* end contents */
+
+/* begin components */
+.h2d-form--center {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 100px;
+    width: 100%;
+}
+
+button {
+    outline: none;
+    border: none;
+    padding: 10px;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+}
+
+label {
+    width: 100%;
+}
+form p {
+    margin: 10px 0;
+}
+input, textarea, select {
+    outline: none;
+    border: none;
+    padding: 8px 6px;
+    background-color: #f7f1e3;
+    margin: 2px 0;
+    width: 100%;
+}
+/* endcomponents */
+
+/* begin scroll */
+::-webkit-scrollbar { 
+    width: 8px;
+}
+/* begin track */
+::-webkit-scrollbar-track { background: #f1f1f1; }
+/* end track */
+/* begin handle */
+::-webkit-scrollbar-thumb { background: rgb(160, 158, 158); }
+/* end handler */
+/* begin handle on hover */
+::-webkit-scrollbar-thumb:hover { background: rgb(122, 122, 122); }
+/* end handle on hover */
+/* end scroll */
