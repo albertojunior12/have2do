@@ -44,3 +44,17 @@ def task_delete(request, id):
     task = Task.objects.get(id=id)
     task.delete()
     return redirect(reverse_lazy('task_list'))
+
+
+def task_done(request, id):
+    task = Task.objects.get(id=id)
+    task.status = Task.DONE
+    task.save()
+    return redirect(reverse_lazy('project_detail', kwargs={'id': task.project.id}))
+
+
+def task_cancel(request, id):
+    task = Task.objects.get(id=id)
+    task.status = Task.CANCELED
+    task.save()
+    return redirect(reverse_lazy('project_detail', kwargs={'id': task.project.id}))

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
+from django.db.models import Q
 
 from .models import Project
 from tasks.models import Task
@@ -39,5 +40,6 @@ def project_update(request, id):
 
 def project_detail(request, id):
     project = Project.objects.get(id=id)
-    context = {'project': project}
+    tasks = project.tasks.filter(status__in=[Task.PENDING, Task.DONE])
+    context = {'project': project, 'tasks': tasks}
     return render(request, 'projects/project_detail.html', context)

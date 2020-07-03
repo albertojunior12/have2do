@@ -25,10 +25,29 @@
   </div>
 
   <div class="h2d-project--tasks">
-    {% for task in project.tasks.all %}
-    <div class="h2d-card--task">
-      <h4>{{ task.title }}</h4>
+    {% for task in tasks %}
+    <div class="
+    {% if task.status == 0 %}
+      h2d-card--task
+    {% elif task.status == 1 %}
+      h2d-task--done
+    {% endif %}
+    ">
+      <div class="h2d-card-task--header">
+        <div>
+          <h4>{{ task.title }}</h4>
+          <small>{{ task.get_status_display }}</small>
+        </div>
+        {% if task.status == 0 %}
+          <a href="{% url 'task_done' task.id %}" class="h2d-btn bg-success">Finalizar</a>
+        {% endif %}
+      </div>
       {{ task.description|linebreaks }}
+      <div class="h2d-card-task--footer">
+        {% if task.status == 0 %}
+          <a href="{% url 'task_cancel' task.id %}" class="h2d-btn bg-danger">Cancelar</a>
+        {% endif %}
+      </div>
     </div>
     {% empty %}
     <p>

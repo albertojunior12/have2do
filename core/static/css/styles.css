@@ -23,7 +23,7 @@ body {
 .bg-success {background: #2A9D8F; color: #F5F6FA;}
 .bg-secondary {background: #E9C46A; color: #333333;}
 .bg-warning {background: #F4A261; color: #F5F6FA;}
-.bg-danger {background: #E76F51; color: #333333;}
+.bg-danger {background: #E76F51; color: #F5F6FA;}
 .bg-ligth {background: #F5F6FA; color: #333333;}
 .bg-dark {background: #333333; color: #F5F6FA;}
 /* end backgrounds */
@@ -103,6 +103,7 @@ body {
     margin: 18px 0;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 
     width: 16rem;
     max-height: 240px;
@@ -121,9 +122,41 @@ body {
     box-shadow: 4px 4px 14px rgba(0,0,0,0.2);
 }
 
+.h2d-task--done {
+    margin: 18px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 16rem;
+    max-height: 240px;
+    min-height: 240px;
+    overflow: auto;
+
+    background-color: #b2bec3;
+    padding: 18px;
+    border-radius: 0.2rem;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    transition: box-shadow 0.4s;
+
+    color: #333333;
+}
+
+.h2d-card-task--header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .h2d-card--task p {
     margin: 10px 0;
     font-weight: 300;
+}
+
+.h2d-card-task--footer {
+    margin: 10px 0;
+    align-self: flex-end;
 }
 
 .h2d-card {
@@ -190,7 +223,8 @@ body {
     width: 100%;
 }
 
-button {
+button, .h2d-btn {
+    text-decoration: none;
     outline: none;
     border: none;
     padding: 10px;
