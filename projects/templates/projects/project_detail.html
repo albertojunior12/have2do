@@ -55,6 +55,8 @@
     </p>
     {% endfor %}
   </div>
-
 </section>
+<a href="{% url 'task_create' project.id %}" class="h2d-float--button">
+  Nova Task
+</a>
 {% endblock %}

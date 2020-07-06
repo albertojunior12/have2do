@@ -1,18 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <form method="post">
-        {% csrf_token %}
+{% extends 'bases/base.html' %}
 
-        {{ form.as_p }}
-
+{% block content %}
+<section class="h2d-section">
+    <div class="h2d-form--center">
         <div>
-            <button type="submit">Salvar</button>
+            <h2>Criar Task</h2>
+            <form method="post">
+                {% csrf_token %}
+
+                {{ form.as_p }}
+
+                <div>
+                    <button type="submit">Salvar</button>
+                </div>
+            </form>
         </div>
-    </form>
-</body>
-</html>
+    </div>
+
+</section>
+{% endblock %}

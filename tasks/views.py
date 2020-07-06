@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 
 from .models import Task
+from .models import Project
 from .forms import TaskForm
 
 
@@ -11,13 +12,15 @@ def task_list(request):
     return render(request, 'tasks/task_list.html', context)
 
 
-def task_create(request):
+def task_create(request, id):
     form = TaskForm(request.POST or None)
     context = {'form': form}
     if request.method == 'POST':
+        project = Project.objects.get(id=id)
+        form.instance.project = project
         if form.is_valid():
             form.save()
-            return redirect(reverse_lazy('task_list'))
+            return redirect(reverse_lazy('project_detail', kwargs={'id': id}))
     return render(request, 'tasks/task_create.html', context)
 
 
